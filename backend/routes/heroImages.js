@@ -1,5 +1,7 @@
 const express = require('express');
 const multer = require('multer');
+const path = require('path');
+const fs = require('fs');
 const HeroImage = require('../models/HeroImage');
 
 const router = express.Router();
@@ -15,7 +17,10 @@ const upload = multer({ storage });
 // Upload Hero Image
 router.post('/', upload.single('heroImage'), async (req, res) => {
   const imageUrl = `http://localhost:5000/uploads/${req.file.filename}`;
-  const newImage = new HeroImage({ imageUrl });
+  const newImage = new HeroImage({ 
+    filename: req.file.filename,
+    imageUrl: imageUrl 
+  });
   await newImage.save();
   res.json({ message: 'Uploaded', imageUrl });
 });

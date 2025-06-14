@@ -33,7 +33,10 @@ const UserTable = () => {
 
   return (
     <div className="p-6">
-      <h2 className="text-2xl font-semibold mb-4">Registered Users</h2>
+      <h2 className="text-2xl font-semibold mb-4 flex justify-between items-center">
+        Registered Users
+        <span className="text-sm text-gray-600">{users.length} users</span>
+      </h2>
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border border-gray-200">
           <thead className="bg-gray-100">

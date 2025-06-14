@@ -30,7 +30,7 @@ const HeroImage = () => {
   };
 
   return (
-    <div className="relative h-[70vh] w-3/4 mx-auto rounded-lg overflow-hidden">
+    <div className="relative h-[90vh] w-3/4 mx-auto rounded-lg overflow-hidden">
       {images.map((img, index) => (
         <img
           key={index}

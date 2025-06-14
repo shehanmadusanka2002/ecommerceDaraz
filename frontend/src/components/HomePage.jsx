@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ImageCard from "./ImageCard";
 import HeroImage from "./HeroImage";
-import Navbar from "./Navbar";
+import Navbar from "./NavBar";
 import Footer from "./Footer";
 import '../App.css';
 
