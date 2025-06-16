@@ -5,8 +5,9 @@ import Register from './components/Register'
 import ProductList from './components/ProductList'
 import ProductForm from './components/ProductForm'
 import HomePage from './components/HomePage'
-import Navbar from './components/Navbar'
+import Navbar from './components/NavBar'
 import AdminDashboard from './components/AdminDashboard'
+import ProductDetails from './components/ProductDetails'
 
 function App() {
   
@@ -24,6 +25,7 @@ function App() {
             <Route path="/home" element={<HomePage />} />
             <Route path="/navbar" element={<Navbar />} />
             <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/product/:id" element={<ProductDetails />} />
           </Routes>
         </Router>
       </div>

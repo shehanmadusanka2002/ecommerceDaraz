@@ -1,5 +1,6 @@
 import React from "react";
 import { Search, ShoppingCart } from "lucide-react";
+import darazLogo from '../assets/daraz-logo.png';
 
 export default function Navbar({ search, setSearch, filterCategory, setFilterCategory, categories }) {
   return (
@@ -17,30 +18,29 @@ export default function Navbar({ search, setSearch, filterCategory, setFilterCat
       </div>
 
       {/* Main nav */}
-      <nav className="bg-orange-500 py-3 shadow-md sticky top-0 z-50">
-        <div className="container mx-auto flex flex-col md:flex-row items-center px-4">
-          <div className="text-white font-bold text-2xl mb-3 md:mb-0 md:mr-6">
+      <nav className="bg-orange-500 h-24 py-3 shadow-md sticky top-0 z-50">
+        <div className="container my-auto mx-auto w-full flex flex-col md:flex-row items-center px-4">
+          <div className="text-white flex-grow-0 flex justify-start items-center font-bold text-2xl mb-3 md:mb-0 md:mr-6 space-x-2">
+            <img src={darazLogo} alt="Daraz Logo" className="w-10 h-10" />
             <a href="#" className="flex items-center">
               <span>Daraz</span>
             </a>
           </div>
 
-          <div className="flex-grow flex items-center mb-3 md:mb-0">
-            <div className="relative w-full">
+          <div className="flex flex-grow justify-center items-center mb-3 md:mb-0 space-x-4">
+            <div className="relative w-full max-w-md flex items-center">
               <input
                 type="text"
                 placeholder="Search in Daraz"
-                className="w-full px-4 py-2 rounded-l-md focus:outline-none"
+                className="w-full px-4 py-2 focus:outline-none"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
-              <button className="absolute right-0 top-0 bg-orange-600 h-full px-4 rounded-r-md flex items-center justify-center hover:bg-orange-700">
+              <button className="absolute right-0 top-0 bg-orange-600 h-full px-4 flex items-center justify-center hover:bg-orange-700">
                 <Search className="text-white" size={20} />
               </button>
             </div>
-          </div>
 
-          <div className="md:ml-6">
             <button className="text-white">
               <ShoppingCart size={24} />
             </button>

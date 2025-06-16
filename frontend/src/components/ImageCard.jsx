@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ImageCard = ({ product }) => {
   return (
@@ -6,24 +7,27 @@ const ImageCard = ({ product }) => {
       key={product._id}
       className="relative bg-white h-auto rounded-xl border hover:shadow-xl transition-all duration-300 overflow-hidden group flex flex-col"
     >
-    
       {/* Favorite Icon */}
       <button className="absolute top-2 right-2 text-gray-400 hover:text-red-500 z-10">
         ❤️
       </button>
 
-      {/* Product Image */}
-      <div className="w-full h-40 flex items-center justify-center bg-gray-50 p-2">
+      {/* Product Image - Make it clickable */}
+      <Link to={`/product/${product._id}`} className="w-full h-40 flex items-center justify-center bg-gray-50 p-2">
         <img
           src={`http://localhost:5000/uploads/${product.image}`}
           alt={product.name}
-          className="max-h-full object-contain"
+          className="max-h-full object-contain cursor-pointer"
         />
-      </div>
+      </Link>
 
       {/* Product Info */}
       <div className="p-4 flex flex-col flex-grow">
-        <h3 className="text-sm font-semibold text-gray-800 line-clamp-2">{product.name}</h3>
+        <Link to={`/product/${product._id}`}>
+          <h3 className="text-sm font-semibold text-gray-800 line-clamp-2 hover:text-blue-600 cursor-pointer">
+            {product.name}
+          </h3>
+        </Link>
         <p className="text-green-600 font-bold text-xs mb-1">{product.brand || "ORAIMO"}</p>
 
         {/* Rating */}
@@ -41,9 +45,11 @@ const ImageCard = ({ product }) => {
 
         {/* Hover Buttons */}
         <div className="mt-2 flex justify-center gap-2 opacity-0 group-hover:opacity-100 transition">
-          <button className="bg-white border text-xs px-3 py-1 rounded-full shadow hover:bg-blue-50">
-            Quick View
-          </button>
+          <Link to={`/product/${product._id}`}>
+            <button className="bg-white border text-xs px-3 py-1 rounded-full shadow hover:bg-blue-50">
+              Quick View
+            </button>
+          </Link>
           <button className="bg-white border text-xs px-3 py-1 rounded-full shadow hover:bg-green-50">
             Quick Order
           </button>
