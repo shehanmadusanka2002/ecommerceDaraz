@@ -192,7 +192,7 @@ export default function AdminDashboard() {
         fixed h-full z-30 shadow-xl`}
       >
         <div className="p-4 flex items-center justify-between">
-          {sidebarOpen && <h1 className="text-xl font-bold">Lap Galaxy</h1>}
+          {sidebarOpen && <h1 className="text-xl font-bold">DARAZ Admin</h1>}
           <button 
             onClick={() => setSidebarOpen(!sidebarOpen)}
             className="p-2 rounded-lg hover:bg-white/10 transition-colors duration-200"
